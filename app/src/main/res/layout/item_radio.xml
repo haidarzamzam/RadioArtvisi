@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="data"
+            type="com.haidev.radioartvisi.main.home.viewmodels.ItemRadioViewModel" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cont_item_root"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="@{data.onClick}"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="5dp"
+        app:cardUseCompatPadding="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/imageViewLogo"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp"
+                app:imageResource="@{data.logo}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="ContentDescription" />
+
+            <TextView
+                android:id="@+id/textViewRadioTitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="14dp"
+                android:layout_marginEnd="16dp"
+                android:ellipsize="end"
+                android:fontFamily="@font/montserrat_bold"
+                android:lines="1"
+                android:maxLines="1"
+                android:text="@{data.nama}"
+                android:textColor="@color/colorText"
+                android:textSize="13sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/imageViewLogo"
+                app:layout_constraintTop_toTopOf="@+id/imageViewLogo" />
+
+            <TextView
+                android:id="@+id/textViewRadioAddress"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="14dp"
+                android:layout_marginTop="3dp"
+                android:layout_marginEnd="16dp"
+                android:ellipsize="end"
+                android:fontFamily="@font/montserrat_regular"
+                android:lines="2"
+                android:maxLines="2"
+                android:text="@{data.alamat}"
+                android:textSize="12sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/imageViewLogo"
+                app:layout_constraintTop_toBottomOf="@+id/textViewRadioTitle"
+                app:lineHeight="16sp" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+</layout>

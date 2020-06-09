@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="data"
+            type="com.haidev.radioartvisi.main.home.viewmodels.HomeViewModel" />
+    </data>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorWhite"
+        tools:context=".main.views.MainActivity">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorWhite">
+
+            <com.google.android.material.appbar.CollapsingToolbarLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:contentScrim="@color/colorWhite"
+                app:layout_scrollFlags="scroll|exitUntilCollapsed"
+                app:titleEnabled="false">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/colorWhite">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="170dp"
+                        android:layout_marginBottom="15dp"
+                        android:background="@drawable/bg_gradient_home"
+                        android:fitsSystemWindows="true">
+
+                        <LinearLayout
+                            android:id="@+id/layoutToolbar"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="30dp"
+                            android:layout_marginBottom="30dp"
+                            android:gravity="center_vertical"
+                            android:orientation="vertical"
+                            app:layout_collapseMode="parallax">
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="12dp"
+                                android:fontFamily="@font/montserrat_bold"
+                                android:text="@string/radio_artvisi"
+                                android:textColor="@color/colorWhite"
+                                android:textSize="24sp" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="12dp"
+                                android:fontFamily="@font/montserrat_regular"
+                                android:text="@string/asosiasi_radio_dan_tv_islam_indonesia"
+                                android:textColor="@color/colorWhite"
+                                android:textSize="13sp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+                    </RelativeLayout>
+                </RelativeLayout>
+
+                <androidx.appcompat.widget.Toolbar
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginEnd="15dp"
+                    android:background="@drawable/bg_tab_menu_home">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal"
+                        android:weightSum="2">
+
+                        <LinearLayout
+                            android:id="@+id/btnRadio"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center_horizontal"
+                            android:orientation="vertical">
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/txtTitleRadio"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:fontFamily="@font/montserrat_semibold"
+                                android:text="@string/radio"
+                                android:textColor="@color/colorPrimaryDark"
+                                android:textSize="16sp"
+                                android:textStyle="bold" />
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:id="@+id/indicatorRadio"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="4dp"
+                                android:background="@drawable/dots_active" />
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                            android:id="@+id/btnTv"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center_horizontal"
+                            android:orientation="vertical">
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/txtTitleTv"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:fontFamily="@font/montserrat_semibold"
+                                android:text="@string/tv"
+                                android:textColor="@color/colorTextSecondary"
+                                android:textSize="16sp"
+                                android:textStyle="bold" />
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:id="@+id/indicatorTv"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="4dp"
+                                android:background="@drawable/dots_unactive" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                </androidx.appcompat.widget.Toolbar>
+
+            </com.google.android.material.appbar.CollapsingToolbarLayout>
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorWhite"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/viewRadio"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginBottom="16dp"
+                    android:clipToPadding="true"
+                    android:orientation="vertical"
+                    android:overScrollMode="never">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="15dp"
+                        android:fontFamily="@font/montserrat_regular"
+                        android:text="@string/list_of_radio"
+                        android:textAllCaps="true"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rvRadio"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:overScrollMode="never" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/viewTv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginBottom="16dp"
+                    android:clipToPadding="true"
+                    android:orientation="vertical"
+                    android:overScrollMode="never"
+                    android:visibility="gone">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="15dp"
+                        android:fontFamily="@font/montserrat_regular"
+                        android:text="@string/list_of_tv"
+                        android:textAllCaps="true"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rvTv"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:overScrollMode="never" />
+
+                </LinearLayout>
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</layout>
